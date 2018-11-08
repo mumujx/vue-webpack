@@ -1,10 +1,11 @@
 <template>
-    <header class="main-header">
+    <!-- 这里的css样式设置使用了cssModules增强了代码的保密性和可读性，在vue-loader.config.js中设置的 -->
+    <header :class="$style.mainHeader">
         <h1>ToDoList</h1>
     </header>
 </template>
 
-<style lang="stylus" scoped>
+<style lang="stylus" module>
     .main-header{
         text-align center
         h1{

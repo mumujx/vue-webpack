@@ -1,0 +1,12 @@
+root = true
+
+[*]
+charset = UTF-8
+# 换行符风格
+end_of_line = lf
+indent_size = 4
+indent_style = space
+# 在保存时会自动加上空行
+insert_final_newline = true
+# 去除代码结尾处的空格
+trim_trailing_whitespace = true
