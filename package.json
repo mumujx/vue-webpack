@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "vue": "^2.5.17"
+    "vue": "^2.5.17",
+    "vue-router": "^3.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.1.2",
@@ -49,6 +50,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build:client": "cross-env NODE_ENV=production webpack --config build/webpack.config.client.js",
     "build": "npm run clean && npm run build:client",
+    "practice": "cross-env NODE_ENV=development webpack-dev-server --config build/webpack.config.practice.js",
     "clean": "rimraf dist",
     "lint": "eslint --ext .js --ext .jsx --ext .vue client/",
     "lint-fix": "eslint --fix --ext .js --ext .jsx --ext .vue client/",

@@ -17,7 +17,9 @@ const defaultPlugins = [
         }
     }),
     // webpack打包时打包出一个HTML文件作为入口文件
-    new HTMLPlugin()
+    new HTMLPlugin({
+        template: path.join(__dirname, 'template.html')
+    })
 ]
 // overlay：出现错误时在网页上展示这个错误，方便定位问题的位置
 const devServer = {
@@ -27,7 +29,9 @@ const devServer = {
         errors: true
     },
     // 单页应用的时候，将没有映射的地址映射到index.html这个入口文件上
-    // historyFallack: {},
+    historyApiFallback: {
+        index: '/public/index.html'
+    },
     // open: true
     // 热更新
     hot: true
@@ -68,6 +72,11 @@ if(isDev){
             ]
         },
         devServer,
+        resolve: {
+            alias: {
+                'vue': path.join(__dirname, '../node_modules/vue/dist/vue.esm.js')
+            }
+        },
         plugins: defaultPlugins.concat([
             new webpack.HotModuleReplacementPlugin()
             // new webpack.NoEmitOnErrorsPlugin()
